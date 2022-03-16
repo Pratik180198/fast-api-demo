@@ -19,7 +19,7 @@ def users(no):
 
 
 @app.get('/home')
-def home(limit: int = 10, published: bool = True):
+def home(limit: int = 10, published: bool = False):
     if published:
         return f"This is {limit} and published is True"
     else:

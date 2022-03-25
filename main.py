@@ -16,13 +16,13 @@ def about():
     return {'data': 'about page'}
 
 
-@app.get('/about/users{no}')
+@app.get('/about/users{no}')    # path parameter
 def users(no:int):
     return {'users': f'There are {no} of users'}
 
 
 @app.get('/home')
-def home(limit: int = 10, published: bool = False):
+def home(limit: int = 10, published: bool = False):     # query parameter
     if published:
         return f"This is {limit} and published is True"
     else:

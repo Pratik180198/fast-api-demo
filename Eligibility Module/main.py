@@ -131,8 +131,8 @@ def read_stage_two(request: Request):
 
 @app.post('/stagetwo')
 def check_stream(request: Request, form_details: StageTwo = Depends(StageTwo.as_form), db: Session = Depends(get_db)):
+    # print(form_details.stream)
     details = db.query(models.Stages).filter(models.Stages.stream.in_(form_details.stream)).all()
-
     db.query(models.StageTwo).delete()
     db.commit()
 
